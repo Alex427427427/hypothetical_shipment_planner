@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- adjusting for mobile and desktop viewports -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuHumane Shipping Organiser</title>
+    <!-- mdl links -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!-- mdl colours -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.amber-indigo.min.css" />
+    <!-- map -->
+    <link rel="stylesheet" type="text/css" href="styles/plan.css">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css' rel='stylesheet'>
+  </head>
+  <body>
+    <!-- Simple header with scrollable tabs. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">AuHumane Shipping Organiser</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation -->
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="confirmedRoutes.html">
+              <i class="material-icons">
+                language
+              </i>
+              <b>Confirmed Routes</b></a>
+            <a class="mdl-navigation__link">
+              <i class="material-icons">library_books</i>
+              Plan New Route</a>
+            <a class="mdl-navigation__link" href="ships.html">
+              <i class="material-icons">
+                directions_boat
+              </i>
+              <b>Ships</b></a>
+            <a class="mdl-navigation__link" href="ports.html">
+              <i class="material-icons">
+                house
+              </i>
+              <b>Ports</b></a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">AuHumane</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="confirmedRoutes.html">
+            <i class="material-icons">
+              language
+            </i>
+            <b>Confirmed Routes</b></a>
+          <a class="mdl-navigation__link">
+            <i class="material-icons">library_books</i>
+            Plan New Route</a>
+          <a class="mdl-navigation__link" href="ships.html">
+            <i class="material-icons">
+              directions_boat
+            </i>
+            <b>Ships</b></a>
+          <a class="mdl-navigation__link" href="ports.html">
+            <i class="material-icons">
+              house
+            </i>
+            <b>Ports</b></a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+<!-- Date -->
+        <div class="page-content" id="date">
+          <!-- Your content goes here -->
+          <h2>Step 5: Set a date for departure.</h2>
+          <h3>Date should be no more than 3 months into the future</h3>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="date" id="departure" placeholder="dd/mm/yyyy">
+            <label class="mdl-textfield__label" for="departure">Departure Date</label>
+          </div>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ri
+          pple-effect mdl-button--accent" onclick="setDepartureDate()">
+            Set
+          </button><br/><br/>
+          <div id="dateDisplay">
+          </div>
+          <div id="dateDisplay2">
+          </div><br/>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ri
+          pple-effect mdl-color--red-500 mdl-color-text--white" onclick="resetRoute()">
+            Reset progress
+          </button>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ri
+          pple-effect mdl-button--colored" onclick="window.location.href='step4.html'">
+            Previous Step
+          </button>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ri
+          pple-effect mdl-button--accent" id = "next" onclick="window.location.href='step6.html'" disabled>
+            Next Step
+          </button>
+        </div>
+
+      </main>
+    </div>
+  </body>
+  <script src="scripts/classes.js"></script>
+  <script src="scripts/step5.js"></script>
+</html>

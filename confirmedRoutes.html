@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- adjusting for mobile and desktop viewports -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuHumane Shipping Organiser</title>
+    <!-- mdl links -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!-- mdl colours -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.amber-indigo.min.css" />
+    <link rel="stylesheet" type="text/css" href="styles/confirmedRoutes.css">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css' rel='stylesheet'>
+  </head>
+  <body>
+    <!-- Simple header with scrollable tabs. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">AuHumane Shipping Organiser</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation -->
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link">
+              <i class="material-icons">
+                language
+              </i>
+              Confirmed Routes
+            </a>
+            <div id = "stepNav">
+              <a class="mdl-navigation__link" href="planNewRoute.html"><b>Plan New Route</b></a>
+            </div>
+            <a class="mdl-navigation__link" href="ships.html">
+              <i class="material-icons">
+                directions_boat
+              </i>
+              <b>Ships</b>
+            </a>
+            <a class="mdl-navigation__link" href="ports.html">
+              <i class="material-icons">
+                house
+              </i>
+              <b>Ports</b>
+            </a>
+          </nav>
+        </div>
+        <!-- Tabs -->
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+          <a href="#scroll-tab-1" class="mdl-layout__tab is-active">
+            Upcoming Routes
+          </a>
+          <a href="#scroll-tab-2" class="mdl-layout__tab">
+            Routes In Progress
+          </a>
+          <a href="#scroll-tab-3" class="mdl-layout__tab">
+            Completed Routes
+          </a>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">AuHumane</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link">
+            <i class="material-icons">
+              language
+            </i>
+            Confirmed Routes
+          </a>
+          <div id = "stepDrawer">
+            <a class="mdl-navigation__link" href="planNewRoute.html"><b>Plan New Route</b></a>
+          </div>
+          <a class="mdl-navigation__link" href="ships.html">
+            <i class="material-icons">
+              directions_boat
+            </i>
+            <b>Ships</b>
+          </a>
+          <a class="mdl-navigation__link" href="ports.html">
+            <i class="material-icons">
+              house
+            </i>
+            <b>Ports</b>
+          </a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+<!-- Future -->
+        <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
+          <div class="page-content">
+            <!-- Your content goes here -->
+            <div class="mdl-grid">
+              <div class="mdl-cell mdl-cell--12-col mdl-cell--16-col-tablet">
+                <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" id="confirmed">
+
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+<!-- In Progress -->
+        <section class="mdl-layout__tab-panel" id="scroll-tab-2">
+          <div class="page-content">
+            <!-- Your content goes here -->
+            <div class="mdl-grid">
+              <div class="mdl-cell mdl-cell--12-col mdl-cell--16-col-tablet">
+                <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" id="inProgress">
+
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+<!-- Completed -->
+        <section class="mdl-layout__tab-panel" id="scroll-tab-3">
+          <div class="page-content">
+            <!-- Your content goes here -->
+            <div class="mdl-grid">
+              <div class="mdl-cell mdl-cell--12-col mdl-cell--16-col-tablet">
+                <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" id="complete">
+
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+  <script src="scripts/classes.js"></script>
+  <script src="scripts/routes.js"></script>
+</html>

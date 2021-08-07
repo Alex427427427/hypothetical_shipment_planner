@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- adjusting for mobile and desktop viewports -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuHumane Shipping Organiser</title>
+    <!-- mdl links -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!-- mdl colours -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.amber-indigo.min.css" />
+    <style>
+      .mdl-data-table.mdl-js-data-table {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .map{height: calc(100vh - 155px)}
+      .demo-card-square.mdl-card {
+        width: 320px;
+        height: 320px;
+      }
+      .demo-card-square > .mdl-card__title {
+        color: #fff;
+        background:
+        url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+      }
+    </style>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css' rel='stylesheet'>
+  </head>
+  <body>
+    <!-- Simple header with scrollable tabs. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">AuHumane Shipping Organiser</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation -->
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link">
+              <i class="material-icons">
+                language
+              </i>
+              Confirmed Routes
+            </a>
+            <div id = "stepNav">
+              <a class="mdl-navigation__link" href="planNewRoute.html"><b>Plan New Route</b></a>
+            </div>
+            <a class="mdl-navigation__link" href="ships.html">
+              <i class="material-icons">
+                directions_boat
+              </i>
+              <b>Ships</b>
+            </a>
+            <a class="mdl-navigation__link" href="ports.html">
+              <i class="material-icons">
+                house
+              </i>
+              <b>Ports</b>
+            </a>
+          </nav>
+        </div>
+
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">AuHumane</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link">
+            <i class="material-icons">
+              language
+            </i>
+            Confirmed Routes
+          </a>
+          <div id = "stepDrawer">
+            <a class="mdl-navigation__link" href="planNewRoute.html"><b>Plan New Route</b></a>
+          </div>
+          <a class="mdl-navigation__link" href="ships.html">
+            <i class="material-icons">
+              directions_boat
+            </i>
+            <b>Ships</b>
+          </a>
+          <a class="mdl-navigation__link" href="ports.html">
+            <i class="material-icons">
+              house
+            </i>
+            <b>Ports</b>
+          </a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+<!-- Future -->
+        <div class="page-content">
+          <div class="mdl-grid">
+
+            <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+              <h2>Shipment Info:</h2>
+              <div id="displayArea">
+              </div>
+              <div id="dateDisplay"></div>
+              <div id="dateDisplay2"></div>
+              <br/><br/>
+              <div id="destinationDisplay">
+              </div>
+              <div id="buttons">
+              </div>
+            </div>
+            <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+              <div class="map" id="map"></div>
+            </div>
+          </div>
+
+
+        </div>
+      </main>
+    </div>
+  </body>
+  <script src="scripts/classes.js"></script>
+  <script src="scripts/info.js"></script>
+</html>

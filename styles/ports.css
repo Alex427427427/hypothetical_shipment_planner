@@ -1,0 +1,28 @@
+.mdl-data-table.mdl-js-data-table {
+  margin-left: auto;
+  margin-right: auto;
+
+}
+#scroll-tab-1 {
+  background-image: url("ocean.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+  height:100%;
+}
+#add {
+  padding: 20px;
+}
+div.mdl-grid {
+  overflow-y: scroll;
+  display:block;
+}
+
+.fixed_header tbody{
+  display:block;
+  overflow-y:scroll;
+  height:100vh;
+  width:100%;
+}
+.fixed_header thead tr{
+  display:block;
+}

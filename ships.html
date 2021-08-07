@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- adjusting for mobile and desktop viewports -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuHumane Shipping Organiser</title>
+    <!-- mdl links -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!-- mdl colours -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.amber-indigo.min.css" />
+    <link rel="stylesheet" type="text/css" href="styles/ships.css">
+  </head>
+  <body>
+    <!-- Simple header with scrollable tabs. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">AuHumane Shipping Organiser</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation -->
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="confirmedRoutes.html">
+              <i class="material-icons">
+                language
+              </i>
+              <b>Confirmed Routes</b>
+            </a>
+            <div id = "stepNav">
+              <a class="mdl-navigation__link" href="planNewRoute.html"><b>Plan New Route</b></a>
+            </div>
+            <a class="mdl-navigation__link">
+              <i class="material-icons">
+                directions_boat
+              </i>
+              Ships
+            </a>
+            <a class="mdl-navigation__link" href="ports.html">
+              <i class="material-icons">
+                house
+              </i>
+              <b>Ports</b>
+            </a>
+          </nav>
+        </div>
+        <!-- Tabs -->
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+          <a href="#scroll-tab-1" class="mdl-layout__tab is-active">Ships List</a>
+          <a href="#scroll-tab-2" class="mdl-layout__tab">Add New Ship</a>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">AuHumane</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="confirmedRoutes.html">
+            <i class="material-icons">
+              language
+            </i>
+            <b>Confirmed Routes</b>
+          </a>
+          <div id = "stepDrawer">
+            <a class="mdl-navigation__link" href="planNewRoute.html"><b>Plan New Route</b></a>
+          </div>
+          <a class="mdl-navigation__link">
+            <i class="material-icons">
+              directions_boat
+            </i>
+            Ships
+          </a>
+          <a class="mdl-navigation__link" href="ports.html">
+            <i class="material-icons">
+              house
+            </i>
+            <b>Ports</b>
+          </a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+        <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
+          <div class="page-content">
+            <div class="mdl-grid">
+              <div class="mdl-cell mdl-cell--12-col mdl-cell--16-col-tablet">
+                <div style="height:598px;width:auto;overflow:auto;">
+                <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                  <thead class="fixed header">
+                    <tr class="fixed_header">
+                      <th class="mdl-data-table__cell--non-numeric">Ship Name</th>
+                      <th>Max Speed (km/h)</th>
+                      <th>Range (km)</th>
+                      <th>Cost (units per km)</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id = "listOfShipTable" class="fixed_header">
+                  </tbody>
+                </table>
+              </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="scroll-tab-2">
+          <div class="page-content">
+            <div class="mdl-grid">
+              <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+            <!-- Your content goes here -->
+                <h3>Enter ship details </h3>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="text" id="shipName">
+                  <label class="mdl-textfield__label" for="Fname">Ship Name</label>
+                </div><br>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="number" id="shipSpeed">
+                  <label class="mdl-textfield__label" for="travelDist">Speed of ship (km/h)</label>
+                </div><br>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="number" id="range">
+                  <label class="mdl-textfield__label" for="rentCost">range (km)</label>
+                </div><br>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="number" id="rentCost">
+                  <label class="mdl-textfield__label" for="rentCost">Cost per km($)</label>
+                </div><br><br>
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="addShip()">Add Ship</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+  <script src="scripts/classes.js"></script>
+  <script src="scripts/ships.js"></script>
+</html>

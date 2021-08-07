@@ -1,0 +1,18 @@
+.mdl-data-table.mdl-js-data-table {
+  margin-left: auto;
+  margin-right: auto;
+}
+body {
+   background-image: url("ocean.jpg");
+   background-repeat:no-repeat;
+   background-size:cover;
+ }
+.demo-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
+}
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+  background:
+  url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+}

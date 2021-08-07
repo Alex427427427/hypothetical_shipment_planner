@@ -1,0 +1,6 @@
+.map{height: calc(100vh - 155px)}
+#date{padding-left: 20px; padding-right: 20px}
+.mdl-data-table.mdl-js-data-table {
+  margin-left: auto;
+  margin-right: auto;
+}

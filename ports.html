@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- adjusting for mobile and desktop viewports -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuHumane Shipping Organiser</title>
+    <!-- mdl links -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!-- mdl colours -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.amber-indigo.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="styles/plan.css">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css' rel='stylesheet'>
+
+  </head>
+  <body>
+    <!-- Simple header with scrollable tabs. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">AuHumane Shipping Organiser</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation -->
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="confirmedRoutes.html">
+              <i class="material-icons">
+                language
+              </i>
+              <b>Confirmed Routes</b>
+            </a>
+            <div id = "stepNav">
+              <a class="mdl-navigation__link" href="planNewRoute.html"><b>Plan New Route</b></a>
+            </div>
+            <a class="mdl-navigation__link" href="ships.html">
+              <i class="material-icons">
+                directions_boat
+              </i>
+              <b>Ships</b>
+            </a>
+            <a class="mdl-navigation__link">
+              <i class="material-icons">
+                house
+              </i>
+              Ports
+            </a>
+          </nav>
+        </div>
+        <!-- Tabs -->
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+          <a href="#scroll-tab-1" class="mdl-layout__tab is-active">Ports List</a>
+          <a href="#scroll-tab-2" class="mdl-layout__tab">Add New Port</a>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">AuHumane</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="confirmedRoutes.html">
+            <i class="material-icons">
+              language
+            </i>
+            <b>Confirmed Routes</b></a>
+          <div id = "stepDrawer">
+            <a class="mdl-navigation__link" href="planNewRoute.html"><b>Plan New Route</b></a>
+          </div>
+          <a class="mdl-navigation__link" href="ships.html">
+            <i class="material-icons">
+              directions_boat
+            </i>
+            <b>Ships</b></a>
+          <a class="mdl-navigation__link">
+            <i class="material-icons">
+              house
+            </i>
+            Ports</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+        <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
+          <div class="page-content" id="port">
+            <!-- Your content goes here -->
+            <div class="mdl-grid">
+              <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                <div>
+                  Choose a country:
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <select class="mdl-textfield__input" id="portCountrySelect" onchange="sortPortList()">
+                    </select>
+                    <label class="mdl-textfield__label" for="portCountrySelect">Country</label>
+                  </div>
+                </div>
+                <br/>
+
+                <br/>
+                <div style="height:598px;overflow:auto;">
+                  <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" >
+                    <thead>
+                    </thead>
+                    <tbody id ="table1" style="height:598px;overflow:auto;">
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                <div class="map" id="mapArea"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="scroll-tab-2">
+          <div class="page-content" id="add">
+            <div class="mdl-grid">
+              <div class="mdl-cell mdl-cell--12-col mdl-cell--16-col-tablet">
+            <!-- Your content goes here -->
+                <h3>Enter Port Details</h3>
+                <div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="textfield__input" id="portName">
+                        <label class="mdl-textfield__label" for="portName">Port Name</label>
+                    </div>
+                </div>
+                <div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" id="portAddress">
+                        <label class="mdl-textfield__label" for="portLatitude">Address</label>
+                    </div>
+                </div>
+                <div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="textfield__input" id="portType">
+                        <label class="mdl-textfield__label" for="portName">Port Type</label>
+                    </div>
+                </div>
+                <div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="textfield__input" id="portSize">
+                        <label class="mdl-textfield__label" for="portSize">Port Size</label>
+                    </div>
+                </div><br>
+                <div>
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="OpenCage()">Add Port to Database</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+  <script src="scripts/classes.js"></script>
+  <script src="scripts/PortTestFile.js"></script>
+</html>
